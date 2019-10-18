@@ -1,8 +1,10 @@
 @import 'config';
+@import 'menu';
 
 * {
     box-sizing: border-box;
 }
+
 
 @mixin background {
     @if $show-home-image {
@@ -24,7 +26,6 @@
         right: 0;
         background: rgba(red, .2);
         z-index: -1;
-
     }
 }
 
