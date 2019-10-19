@@ -19,6 +19,72 @@
     .menu-btn.close .btn-line:nth-child(3) {
       transform: rotate(-45deg) translate(7px, -6px); }
 
+.menu {
+  width: 100%;
+  position: fixed;
+  visibility: hidden;
+  opacity: .8; }
+  .menu.show {
+    visibility: visible; }
+  .menu-branding, .menu-nav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    float: left;
+    height: 100vh;
+    transform: translate3d(0, -100%, 0);
+    transition: all .5s ease-in-out; }
+    .menu-branding .nav-item, .menu-nav .nav-item {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      margin-bottom: 1.8rem;
+      transform: translateX(100rem);
+      transition: all .5s ease-in-out; }
+      .menu-branding .nav-item.show, .menu-nav .nav-item.show {
+        transform: translateX(0); }
+      .menu-branding .nav-item .nav-link, .menu-nav .nav-item .nav-link {
+        text-decoration: none;
+        font-size: 2rem;
+        font-weight: bold;
+        letter-spacing: .1rem;
+        text-transform: uppercase; }
+        .menu-branding .nav-item .nav-link:hover, .menu-nav .nav-item .nav-link:hover {
+          color: yellow; }
+  .menu-branding {
+    background: #555050;
+    transform: translateX(-100%);
+    transition: all .5s ease-in-out; }
+    .menu-branding .protrait {
+      width: 250px;
+      height: 250px;
+      background: url("https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500") no-repeat center center/cover;
+      border: solid 2px yellow;
+      border-radius: 50%; }
+    .menu-branding.show {
+      transform: translateX(0); }
+  .menu-nav {
+    margin: 0;
+    padding: 0;
+    background: #4d4949; }
+    .menu-nav.show {
+      transform: translate3d(0, 0, 0); }
+
+.nav-item:nth-child(1) {
+  transition-delay: 0.1s; }
+
+.nav-item:nth-child(2) {
+  transition-delay: 0.2s; }
+
+.nav-item:nth-child(3) {
+  transition-delay: 0.3s; }
+
+.nav-item:nth-child(4) {
+  transition-delay: 0.4s; }
+
 * {
   box-sizing: border-box; }
 
