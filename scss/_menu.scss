@@ -45,6 +45,8 @@
         visibility: visible;
     }
 
+
+
     &-branding,
     &-nav {
         display: flex;
@@ -60,13 +62,20 @@
 
 
 
+
+
         .nav-item {
             margin: 0;
             padding: 0;
             list-style: none;
-            margin-bottom: 1.8rem;
             transform: translateX(100rem);
             @include easeOut();
+            margin-bottom: 1.3rem;
+
+            &.current {
+                border-bottom: 2px solid yellow;
+            }
+
 
             &.show {
                 transform: translateX(0);

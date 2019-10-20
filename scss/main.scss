@@ -33,7 +33,7 @@
 body {
     @include background();
     background: $primary-color;
-    color: #fff;
+    color: set-text-clolr($primary-color);
     margin: 0;
     height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -63,8 +63,11 @@ h3 {
 a {
     color: #fff;
     text-decoration: none;
-    @include easeOut()
+    @include easeOut();
+
 }
+
+
 
 header {
     position: fixed;
@@ -78,8 +81,10 @@ header {
 
 main {
 
-    padding: 4rem;
-    height: 100%;
+    padding: 3rem;
+
+    // min-height: calc(100vh-60px);
+    height: 93vh;
 
     &#home {
         overflow: hidden;
@@ -94,11 +99,196 @@ main {
         margin-top: 1rem;
 
         a {
-            padding: .4rem;
             cursor: pointer;
+
 
             &:hover {
                 color: $secondary-color;
+            }
+        }
+    }
+}
+
+.abou-info {
+    display: grid;
+    grid-template-areas:
+        'image bio bio'
+        'job-1 job-2 job-3';
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+}
+
+
+
+.image {
+    grid-area: image;
+    margin: auto;
+    border-radius: 50%;
+    border: 2px solid yellow
+}
+
+.bio {
+    h3 {
+        color: black;
+        font-size: 3rem;
+        text-transform: capitalize;
+        letter-spacing: 5px;
+        margin-bottom: -1.5rem;
+        ;
+    }
+
+    grid-area: bio;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.job-1 {
+    grid-area: job-1;
+}
+
+.job-2 {
+    grid-area: job-2;
+}
+
+.job-3 {
+    grid-area: job-3;
+}
+
+.job {
+    background: gray;
+    padding: 1rem;
+    border-bottom: 2px solid yellow;
+}
+
+// @media screen and (max-width:760px) {
+
+//     .about-info {
+//         display: none;
+//         grid-template-areas:
+//             'image'
+//             'bio'
+//             'job-1'
+//             'job-2'
+//             'job-3';
+//         grid-template-columns: 1fr;
+
+//     }
+// }
+
+#main-footer {
+    background: $primary-color;
+    padding: 1rem;
+    text-align: center;
+    height: 7vh;
+
+}
+
+.projects {
+
+
+    img {
+        width: 100%;
+        display: block;
+        border: solid 2px white;
+        @include easeOut();
+
+        &:hover {
+            opacity: .7;
+
+        }
+    }
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap:.7rem;
+
+
+}
+
+@media screen and (min-width:700px) {
+    .projects {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media screen and (max-width:750px) {
+    .projects {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width:890px) {
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+
+
+
+.btn {
+    display: block;
+    padding: .5rem;
+    border: none;
+    margin-bottom: .3rem;
+
+
+
+    &:hover {
+        background: black;
+        color: white;
+    }
+}
+
+.btn-dark {
+    @extend .btn;
+    background: $secondary-color;
+
+}
+
+.btn-light {
+    @extend .btn;
+    background: $primary-color;
+}
+
+
+
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 1rem;
+
+    div {
+        font-size: 2rem;
+        border: 3px white solid;
+        padding: 1rem;
+        margin-bottom: 3rem;
+        cursor: pointer;
+
+        @include easeOut();
+
+        &:hover {
+            background: rgb(148, 148, 62);
+            color: white;
+            padding: 2rem;
+        }
+    }
+}
+
+@media screen and (max-width:700px) {
+    .boxes {
+        margin: 1rem;
+
+        div {
+            font-size: 1.5rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+
+            &:hover {
+                padding: 1rem;
             }
         }
     }

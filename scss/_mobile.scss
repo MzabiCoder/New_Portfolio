@@ -3,6 +3,8 @@
 @include mediaXl {}
 
 @include mediaMd {
+
+
     #home {
         display: flex;
         flex-direction: column;
@@ -39,6 +41,10 @@
             width: 130px;
             height: 130px;
         }
+    }
+
+    .abou-info {
+        display: none;
     }
 }
 

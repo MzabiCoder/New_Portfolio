@@ -36,3 +36,14 @@ $background-opacity:0.9;
         @content;
     }
 }
+
+@function set-text-clolr($color) {
+    @if(lightness($color)>40) {
+        @return #444;
+    }
+
+    @else {
+        @return #fff
+    }
+
+}
