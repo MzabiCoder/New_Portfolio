@@ -1,5 +1,5 @@
-$primary-color:rgb(90, 85, 85);
-$secondary-color:#eece1a;
+$primary-color:rgb(131, 73, 73);
+$secondary-color:#ada158;
 $show-home-image:true;
 $home-image:url('https://images.pexels.com/photos/1128240/pexels-photo-1128240.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500') no-repeat center center / cover;
 $background-opacity:0.9;
@@ -7,4 +7,32 @@ $background-opacity:0.9;
 @mixin easeOut {
     transition: all .5s ease-in-out;
 
+}
+
+@mixin mediaSm {
+    @media screen and (max-width:500px) {
+        @content;
+    }
+}
+
+@mixin mediaMd {
+    @media screen and (max-width:768px) {
+        @content;
+    }
+}
+
+
+
+
+@mixin mediaLg {
+    @media screen and (min-width:769px)and (max-width:1170px) {
+        @content;
+    }
+}
+
+
+@mixin mediaXl {
+    @media screen and (min-width:1171px) {
+        @content;
+    }
 }

@@ -55,8 +55,8 @@
         .menu-branding .nav-item .nav-link:hover, .menu-nav .nav-item .nav-link:hover {
           color: yellow; }
   .menu-branding {
-    background: #555050;
-    transform: translateX(-100%);
+    background: #7c4545;
+    transform: translate3d(0, 100%, 0);
     transition: all .5s ease-in-out; }
     .menu-branding .protrait {
       width: 250px;
@@ -65,11 +65,11 @@
       border: solid 2px yellow;
       border-radius: 50%; }
     .menu-branding.show {
-      transform: translateX(0); }
+      transform: translate3d(0, 0, 0); }
   .menu-nav {
     margin: 0;
     padding: 0;
-    background: #4d4949; }
+    background: #734040; }
     .menu-nav.show {
       transform: translate3d(0, 0, 0); }
 
@@ -85,11 +85,37 @@
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
 
+@media screen and (max-width: 768px) {
+  #home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; }
+  .menu-nav,
+  .menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    .menu-nav.show,
+    .menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 25px; }
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-branding .protrait {
+      width: 130px;
+      height: 130px; } }
+
 * {
   box-sizing: border-box; }
 
 body {
-  background: #5a5555;
+  background: #834949;
   color: #fff;
   margin: 0;
   height: 100vh;
@@ -124,8 +150,7 @@ h3 {
   h3.sm-heading {
     margin-bottom: 2rem;
     padding: .2rem 1rem;
-    background: rgba(95, 90, 90, 0.3);
-    display: inline-block; }
+    background: rgba(138, 77, 77, 0.3); }
 
 a {
   color: #fff;
@@ -138,7 +163,7 @@ header {
   width: 100%; }
 
 .text-secondary {
-  color: #eece1a; }
+  color: #ada158; }
 
 main {
   padding: 4rem;
@@ -153,4 +178,4 @@ main {
       padding: .4rem;
       cursor: pointer; }
       main .icons a:hover {
-        color: #eece1a; }
+        color: #ada158; }

@@ -90,7 +90,7 @@
 
     &-branding {
         background: darken($primary-color, 2);
-        transform: translateX(-100%);
+        transform: translate3d(0, 100%, 0);
         @include easeOut();
 
         .protrait {
@@ -103,7 +103,7 @@
         }
 
         &.show {
-            transform: translateX(0);
+            transform: translate3d(0, 0, 0);
         }
 
     }
